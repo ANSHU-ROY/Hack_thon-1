@@ -1,6 +1,6 @@
 //finding a real API of NASA O KNOWLEDGE abou this taking help from ai .........................................
 // Found api super easy
-const API_KEY = 'Enfa7nj3xKhSHMuLwyoBeElCT85JG4nJe9Wsh6Ur'; 
+const API_KEY = 'YOUR_API_KEY'; 
 const API_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
 
 //geting all DOM element 
