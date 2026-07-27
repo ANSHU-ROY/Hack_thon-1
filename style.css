@@ -1,95 +1,124 @@
+/* 1. Basic Reset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* 2. Global Dashboard Background */
 body {
-    background-color: #0b0f19;
+    background-color: #0a0b10; /* Very dark background matching your dashboard */
     color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
+/* 3. Header Styling */
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     width: 100%;
-}
-/* harry bhai ki jai */
-.container {
-    background: transparent; 
-    border: none;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 5px;
-    color: #f8fafc;
+    color: #ffffff;
+    font-style: italic; /* Matching the "Projects for this mission" vibe */
+    font-weight: 700;
 }
 
 #date {
-    color: #94a3b8;
-    font-size: 1.2rem;
+    color: #8b8d9c;
+    font-size: 1rem;
 }
 
+/* 4. THE CARD (Your main container styled to match) */
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 900px;
+    max-width: 600px; /* Width of the card */
     width: 100%;
-    background-color: #111827;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    background-color: #33354a; /* That specific gray-indigo bottom color */
+    border-radius: 10px; /* Smooth rounded corners */
+    border: 1px solid #4a4d65; /* Subtle card outline */
+    overflow: hidden; /* Ensures the image respects the rounded corners */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
 
-#title {
-    color: #60a5fa;
-    margin-bottom: 20px;
-    text-align: center;
-    font-size: 1.8rem;
-}
-
+/* 5. IMAGE SECTION - Visually moved to the top! */
 #media-container {
+    order: 1; /* Forces the image to the very top of the card */
     width: 100%;
-    display: flex;
-    justify-content: center;
+    background-color: #000;
+    position: relative; /* Needed to anchor the badge */
+    border-bottom: 1px solid #2a2c3d;
+}
+
+/* Generate the Cyan Badge without touching HTML! */
+#media-container::before {
+    content: 'FETCHED';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #4dfce0; /* Bright cyan */
+    color: #000000;
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px; /* Pill shape */
+    z-index: 10;
+    letter-spacing: 0.5px;
 }
 
 #media-container img, 
 #media-container iframe {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    max-height: 350px; /* Prevents super tall images from breaking the layout */
+    object-fit: cover; /* Crops nicely like a dashboard thumbnail */
+    display: block;
 }
 
+/* 6. TITLE SECTION - Visually moved to the middle */
+#title {
+    order: 2; /* Places title under the image */
+    padding: 20px 20px 8px 20px;
+    color: #ffffff;
+    text-align: left;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* 7. DESCRIPTION SECTION - Stays at the bottom */
 .description-box {
-    margin-top: 25px;
-    line-height: 1.7;
-    font-size: 1.1rem;
-    color: #cbd5e1;
-    text-align: justify;
+    order: 3; 
+    padding: 0 20px 25px 20px;
+}
+/*hary y bhai ki jai*/
+#description {
+    line-height: 1.4;
+    font-size: 0.95rem;
+    color: #9ba0b6; /* The light grayish-blue text from the cards */
+    text-align: left;
 }
 
+/* 8. Footer */
 footer {
     margin-top: 40px;
     text-align: center;
     font-size: 0.9rem;
-    color: #64748b;
+    color: #4a4d65;
     width: 100%;
 }
 
 footer a {
     color: #60a5fa;
     text-decoration: none;
-    font-weight: bold;
 }
 
 footer a:hover {
